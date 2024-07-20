@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+    <style>
+        body{
+            height: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg,lightblue,pink);
+            ]}
+        .container{
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            @media (width<=500px) {
+                flex-direction: column;
+            }
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .lcontainer{
+            width: 50%;
+            @media (width<=500px) {
+                width: 100%;
+            }
+        }
+        .rcontainer{
+            width: 50%;
+            @media (width<=500px) {
+                width: 100%;
+            }
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+        .controls {
+            margin-top: 10px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .controls button {
+            margin-right: 5px;
+        }
+        button{
+            font-size: x-large;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(45deg, red, gray);
+            color: white;
+        }
+    </style>
+</head>
+<body style="width: 100vw;">
+    <h1>Conway's Game of Life</h1>
+    <div class="container">
+        <div class="lcontainer">
+            <canvas id="myCanvas" width="600" height="600"></canvas>
+        </div>
+        <div class="rcontainer">
+            <div class="controls">
+                <h3>generation : 
+                    <span id="generation"></span>
+                </h3>
+                <button id="startButton">Start</button>
+                <button id="stopButton">Stop</button>
+                <button id="resetButton">Randomize</button>
+            </div>
+        </div>
+    </div>
+    <script src="./conways.js"></script>
+</body>
+</html>
